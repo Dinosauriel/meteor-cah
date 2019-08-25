@@ -1,4 +1,2 @@
-node_modules/
-.meteor/
 .cache/
 package-lock.json
