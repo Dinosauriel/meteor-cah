@@ -5,12 +5,5 @@
     </nav>
 </template>
 <script>
-import { mapState } from 'vuex';
 
-export default {
-	computed: mapState({
-		username: state => state.player.username,
-		isConnected: state => state.websocketConnectionIsActive,
-	})
-}
 </script>

@@ -1,5 +1,8 @@
 <template>
   <div>
+	<header>
+		<navbar></navbar>
+	</header>
     <div v-if="!$subReady.Time">Loading...</div>
     <div v-else>
       <p>Hello {{hello}},
@@ -21,6 +24,7 @@
 </template>
 
 <script>
+import navbar from '/imports/ui/main.navbar.vue';
 import '/imports/collections/Time';
 
 export default {
@@ -37,6 +41,9 @@ export default {
       console.log('Calling Meteor Method UpdateTime');
       Meteor.call('UpdateTime');          // not Meteor reactive
     }
+  },
+  components: {
+	  navbar
   },
   // Meteor reactivity
   meteor: {
