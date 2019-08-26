@@ -3,7 +3,9 @@
 		<header>
 			<navbar></navbar>
 		</header>
-		<router-view></router-view>
+		<div class="container mb-5">
+			<router-view></router-view>
+		</div>
 	</div>
 </template>
 <script>
