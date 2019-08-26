@@ -4,6 +4,8 @@ import '/imports/collections/Time';
 import '/imports/publications/Time';
 import '/imports/methods/UpdateTime';
 
+import '/imports/methods/createGame';
+
 Meteor.startup(() => {
   // Update the current time
   Meteor.call('UpdateTime');

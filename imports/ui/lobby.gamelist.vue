@@ -12,6 +12,12 @@
 </template>
 <script>
 export default {
+	methods: {  
+		createGame() {
+			console.log('calling Meteor method createGame');
+			Meteor.call('createGame');
+		}
+  },
 }
 </script>
 
