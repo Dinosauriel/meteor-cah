@@ -11,28 +11,7 @@
 	</transition-group>
 </template>
 <script>
-import { mapState } from 'vuex'
-
 export default {
-	created: function() {
-		document.addEventListener('websocketDidSetup', this.update);
-	},
-	data: function () {
-		return {
-
-		}
-	},
-	methods: {
-		update: function() {
-			this.$store.dispatch('updateGameList');
-		},
-		createGame: function() {
-			this.$store.dispatch('createGame');
-		}
-	},
-	computed: mapState({
-		games: state => state.gameList
-	})
 }
 </script>
 
