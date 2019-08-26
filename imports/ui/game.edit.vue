@@ -9,10 +9,11 @@
 					</div>
 					<div class="form-group">
 						<label for="game_points">Points</label>
-						<input type="number" class="form-control" id="game_points" aria-describedby="game_points_help" :value="game.points_required" min="1" max="64" name="game_name" required>
+						<input type="number" class="form-control" id="game_points"
+							aria-describedby="game_points_help" :value="game.points_required" min="1" max="64" name="game_name" required>
 						<small id="game_points_help" class="form-text text-muted">How many points are required to win?</small>
 					</div>
-					<cardset-selection></cardset-selection>
+					<cardsetselection></cardsetselection>
 					<button type="submit" class="btn btn-primary">Start Game</button>
 				</form>
 			</div>
@@ -38,19 +39,6 @@
 	</div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import cardsetselection from '/imports/ui/game.cardsetselection.vue';
 
-export default {
-	created: function() {
-		document.addEventListener('websocketDidSetup', this.updateGame);
-	},
-	methods: {
-		updateGame: function() {
-			this.$store.dispatch('updateCurrentGame', game.public_id);
-		}
-	},
-	computed: mapState({
-		game: state => state.game
-	})
-}
 </script>

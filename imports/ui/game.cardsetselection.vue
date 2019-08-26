@@ -10,13 +10,5 @@
     </div>		
 </template>
 <script>
-import { mapState } from 'vuex';
 
-export default {
-	methods: {
-	},
-	computed: mapState({
-		cardsets: state => state.cardsets
-	})
-};
 </script>
