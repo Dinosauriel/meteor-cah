@@ -4,6 +4,7 @@
 			<h5 class="card-title">{{ game.name }}</h5>
 			<h6 class="card-subtitle mb-2 text-muted">{{ game._id }}</h6>
 			<button v-on:click="joinGame" class="btn btn-primary">Join</button>
+			<button v-on:click="editGame" class="btn btn-primary">Edit</button>
 			<button v-on:click="deleteGame" class="btn btn-danger">Delete</button>
 		</div>
 	</div>
@@ -14,7 +15,13 @@ export default {
 	props: {
 		game: Object
 	},
-	methods: {  
+	methods: {
+		joinGame() {
+
+		},
+		editGame() {
+
+		},
 		deleteGame() {
 			console.log('calling Meteor method deleteGame(' + this.game._id + ')');
 			Meteor.call('deleteGame', [this.game._id]);
