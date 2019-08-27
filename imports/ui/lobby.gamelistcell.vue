@@ -14,5 +14,11 @@ export default {
 	props: {
 		game: Object
 	},
+	methods: {  
+		deleteGame() {
+			console.log('calling Meteor method deleteGame(' + this.game._id + ')');
+			Meteor.call('deleteGame', [this.game._id]);
+		}
+	}
 }
 </script>

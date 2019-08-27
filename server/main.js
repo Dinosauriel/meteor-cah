@@ -5,6 +5,7 @@ import '/imports/collections/Games';
 
 import '/imports/methods/UpdateTime';
 import '/imports/methods/createGame';
+import '/imports/methods/deleteGame';
 
 import '/imports/publications/Time';
 import '/imports/publications/Games';
