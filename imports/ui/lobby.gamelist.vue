@@ -1,6 +1,6 @@
 <template>
 	<transition-group name="slide-list" tag="div" class="game-list">
-		<gamelistcell v-for="game in games" v-bind:game="game" v-bind:key="game.public_id"></gamelistcell>
+		<gamelistcell v-for="game in games" v-bind:game="game" v-bind:key="game._id"></gamelistcell>
 		<div class="row justify-content-end game-list-cell" key="new-game">
 			<div class="col col-sm-3">
 				<div class="card mt-4">
