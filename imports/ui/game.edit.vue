@@ -5,7 +5,7 @@
 				<form method="POST" action="">
 					<div class="form-group">
 						<label for="game_name">Name</label>
-						<input type="text" class="form-control" id="game_name" name="game_name"  :value="game.name" required>
+						<input type="text" class="form-control" id="game_name" name="game_name" :value="game.name" required>
 					</div>
 					<div class="form-group">
 						<label for="game_points">Points</label>
@@ -19,7 +19,7 @@
 			</div>
 
 			<div class="col col-sm-4">
-				<invite-link v-bind:invitelink="game.route"></invite-link>
+				<invitelink v-bind:invitelink="game.route"></invitelink>
 
 				<div class="card mt-3">
 					<div class="card-header">
@@ -40,5 +40,23 @@
 </template>
 <script>
 import cardsetselection from '/imports/ui/game.cardsetselection.vue';
+import invitelink from '/imports/ui/game.invitelink.vue';
+import '/imports/collections/Games';
 
+export default {
+	components: {
+		cardsetselection,
+		invitelink
+	},
+	computed: {
+		game: function() {
+			return Games.find({ _id: this.$route.params.gameid });
+		}
+	},
+	watch: {
+		'$route' (to, from) {
+			console.log("route game id changed from " + from + " to " + to);
+		}
+	}
+}
 </script>

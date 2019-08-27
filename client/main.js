@@ -13,9 +13,9 @@ import EditGame from '/imports/ui/game.edit.vue';
 import './main.html';
 
 const routes = [
-  { path: '/', component: Demo },
-  { path: '/games/', component: GameList },
-  { path: '/games/:gameid/edit', component: EditGame }
+  { path: '/', name: 'root', component: Demo },
+  { path: '/games/', name: 'games', component: GameList },
+  { path: '/games/:gameid/edit', name: 'games.edit', component: EditGame }
 ]
 
 const router = new VueRouter({
