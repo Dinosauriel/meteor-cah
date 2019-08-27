@@ -6,4 +6,11 @@
 </template>
 <script>
 
+export default {
+    meteor: {
+        isConnected: function () {
+            return Meteor.status().connected;
+        }
+	}
+}
 </script>
