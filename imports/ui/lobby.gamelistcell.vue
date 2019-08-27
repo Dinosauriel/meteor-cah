@@ -9,24 +9,10 @@
 	</div>
 </template>
 <script>
-import api from '../../api.js';
 
 export default {
 	props: {
 		game: Object
 	},
-	data: function() {
-		return {
-
-		}
-	},
-	methods: {
-		joinGame: function() {
-			this.$store.dispatch('joinGame', this.game.public_id);
-		},
-		deleteGame: function() {
-			this.$store.dispatch('deleteGame', this.game.public_id);
-		}
-	}
 }
 </script>

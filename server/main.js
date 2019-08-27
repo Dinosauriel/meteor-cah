@@ -1,10 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 
 import '/imports/collections/Time';
-import '/imports/publications/Time';
-import '/imports/methods/UpdateTime';
+import '/imports/collections/Games';
 
+import '/imports/methods/UpdateTime';
 import '/imports/methods/createGame';
+
+import '/imports/publications/Time';
+import '/imports/publications/Games';
 
 Meteor.startup(() => {
   // Update the current time
