@@ -19,7 +19,7 @@
 			</div>
 
 			<div class="col col-sm-4">
-				<invitelink v-bind:invitelink="game.route"></invitelink>
+				<invitelink v-bind:invitelink="game.link()"></invitelink>
 
 				<div class="card mt-3">
 					<div class="card-header">
@@ -48,14 +48,22 @@ export default {
 		cardsetselection,
 		invitelink
 	},
-	computed: {
-		game: function() {
-			return Games.find({ _id: this.$route.params.gameid });
-		}
-	},
 	watch: {
 		'$route' (to, from) {
 			console.log("route game id changed from " + from + " to " + to);
+		}
+	},
+	meteor: {
+		$subscribe: {
+      		'Games': []
+    	},
+		game() {
+			if (!this.$subReady.Games) {
+				return {};
+			}
+			console.log(this.$route.query.page);
+			console.log(Games.findOne());
+			return Games.findOne();
 		}
 	}
 }
