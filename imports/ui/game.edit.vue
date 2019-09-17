@@ -9,8 +9,8 @@
 					</div>
 					<div class="form-group">
 						<label for="game_points">Points</label>
-						<input type="number" class="form-control" id="game_points"
-							aria-describedby="game_points_help" :value="game.points_required" min="1" max="64" name="game_name" required>
+						<input type="number" class="form-control" id="game_points_required"
+							aria-describedby="game_points_help" :value="game.points_required" min="1" max="64" name="game_points_required" required>
 						<small id="game_points_help" class="form-text text-muted">How many points are required to win?</small>
 					</div>
 					<cardsetselection></cardsetselection>

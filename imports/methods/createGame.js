@@ -8,6 +8,6 @@ Meteor.methods({
 		}
 
 		console.log('creating new game...');
-		Games.insert({_id:id, name: 'a game'})
+		Games.insert({_id:id, name: 'a game', points_required: 10})
 	},
 });
