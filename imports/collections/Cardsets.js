@@ -1,0 +1,1 @@
+Cardsets = new Mongo.Collection("cardsets");
