@@ -17,10 +17,10 @@ export default {
 	},
 	methods: {
 		joinGame() {
-
+			this.$router.push({ name: 'games.play', params: { gameid: this.game._id } })
 		},
 		editGame() {
-
+			this.$router.push({ name: 'games.edit', params: { gameid: this.game._id } })
 		},
 		deleteGame() {
 			console.log('calling Meteor method deleteGame(' + this.game._id + ')');
