@@ -7,7 +7,9 @@ Meteor.methods({
 		var obj = JSON.parse(json);
 
 		for (cardset in obj.cardsets) {
-			Cardsets.insert(cardset);
+			if (cardset.enabled) {
+				Cardsets.insert(cardset);
+			}
 		}
 		console.log('imported ' + Cardsets.find({}).count() + ' cardsets.');
 	},
