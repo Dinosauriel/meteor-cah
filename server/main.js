@@ -11,6 +11,7 @@ import '/imports/methods/reimportCardsets';
 
 import '/imports/publications/Time';
 import '/imports/publications/Games';
+import '/imports/publications/Cardsets';
 
 Meteor.startup(() => {
   // Update the current time

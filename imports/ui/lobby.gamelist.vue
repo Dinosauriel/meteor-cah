@@ -11,7 +11,7 @@
 	</transition-group>
 </template>
 <script>
-import gamelistcell from '/imports/ui/lobby.gamelistcell.vue'
+import gamelistcell from '/imports/ui/lobby.gamelistcell.vue';
 import '/imports/collections/Games';
 
 export default {
