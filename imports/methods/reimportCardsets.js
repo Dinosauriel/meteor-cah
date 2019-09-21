@@ -3,11 +3,16 @@ Meteor.methods({
 		console.log('reimporting cardsets');
 		Cardsets.remove({});
 
-		var json = Assets.getText('resources/cards/basekit.json');
-		var obj = JSON.parse(json);
+		var basekit = Assets.getText('resources/cards/basekit.json');
+		var customkit = Assets.getText('resources/cards/customkit.json');
 
-		for (var i = 0; i < obj.cardsets.length; ++i) {
-			var cardset = obj.cardsets[i];
+		var basecardsets = JSON.parse(basekit).cardsets;
+		var customcardsets = JSON.parse(customkit).cardsets;
+
+		cardsets = basecardsets.concat(customcardsets);
+
+		for (var i = 0; i < cardsets.length; ++i) {
+			var cardset = cardsets[i];
 			if (cardset.enabled) {
 				cardset.white = undefined;
 				cardset.black = undefined;

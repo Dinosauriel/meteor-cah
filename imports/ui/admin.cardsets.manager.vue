@@ -23,7 +23,6 @@ export default {
 			'Cardsets': []
 		},
 		numberOfCardsets() {
-			console.log('there are ' + Cardsets.find({}).count() + ' cardsets.');
 			return Cardsets.find({}).count();
 		}
 	}
