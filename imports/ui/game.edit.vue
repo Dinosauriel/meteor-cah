@@ -49,21 +49,23 @@ export default {
 		invitelink
 	},
 	watch: {
-		'$route' (to, from) {
+		$route: function(to, from) {
 			console.log("route game id changed from " + from + " to " + to);
 		}
 	},
+	computed: {
+		gameId: function() {
+			return this.$route.params.gameid;
+		}
+	},
+	created: function() {
+		Meteor.subscribe('Games', [this.gameId]);
+	},
 	meteor: {
-		$subscribe: {
-      		'Games': []
-    	},
 		game() {
-			if (!this.$subReady.Games) {
-				return {};
-			}
-			console.log(this.$route.query.page);
-			console.log(Games.findOne());
-			return Games.findOne();
+			console.log(this.gameId);
+			console.log(Games.find({}).fetch());
+			return Games.findOne({_id: this.gameId});
 		}
 	}
 }
