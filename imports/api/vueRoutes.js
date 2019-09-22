@@ -1,5 +1,4 @@
 import VueRouter from 'vue-router'
-import Demo from '/imports/ui/main.demo.vue';
 import Login from '/imports/ui/user.login.vue'
 import GameList from '/imports/ui/lobby.gamelist.vue';
 import EditGame from '/imports/ui/game.edit.vue';
