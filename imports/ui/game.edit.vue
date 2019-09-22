@@ -13,7 +13,7 @@
 							aria-describedby="game_points_help" :value="game.points_required" min="1" max="64" name="game_points_required" required>
 						<small id="game_points_help" class="form-text text-muted">How many points are required to win?</small>
 					</div>
-					<cardsetselection></cardsetselection>
+					<cardsetselection v-bind:game="game"></cardsetselection>
 					<button type="submit" class="btn btn-primary">Start Game</button>
 				</form>
 			</div>
@@ -63,8 +63,6 @@ export default {
 	},
 	meteor: {
 		game() {
-			console.log(this.gameId);
-			console.log(Games.find({}).fetch());
 			return Games.findOne({_id: this.gameId});
 		}
 	}
