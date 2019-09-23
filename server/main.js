@@ -11,5 +11,5 @@ import '/imports/publications/Games';
 import '/imports/publications/Cardsets';
 
 Meteor.startup(() => {
-  
+  console.log("startup");
 });

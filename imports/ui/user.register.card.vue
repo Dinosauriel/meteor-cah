@@ -1,8 +1,8 @@
 <template>
 	<div class="card">
 			<div class="card-body">
-				<h5 class="card-title">Login</h5>
-				<p class="card-text">Log In to start creating games</p>
+				<h5 class="card-title">Register</h5>
+				<p class="card-text">Create a new account.</p>
 				<form id="login-form" :action="action" method="POST">
 					<div class="form-group">
 						<label for="username">Username</label>
@@ -12,19 +12,26 @@
 						<label for="password">Password</label>
 						<input type="password" class="form-control" v-model="password" name="password" required>
 					</div>
-					<button v-on:click="submitLogin" class="btn btn-primary">Submit</button>
+					<div class="form-group">
+						<label for="password">Confirm Password</label>
+						<input type="password" class="form-control" v-model="confirm_password" name="password" required>
+					</div>
+					<button v-on:click="submitRegistration" class="btn btn-primary">Register</button>
 				</form>
 			</div>
 		</div>
 </template>
 <script>
 export default {
-	data: {
-		username: "",
-		password: ""
+	data: function() {
+		return {
+			username: "",
+			password: "",
+			confirm_password: ""
+		}
 	},
 	methods: {
-		submitLogin: function() {
+		submitRegistration: function() {
 
 		}
 	}
