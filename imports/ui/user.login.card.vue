@@ -3,7 +3,7 @@
 			<div class="card-body">
 				<h5 class="card-title">Login</h5>
 				<p class="card-text">Log In to start creating games</p>
-				<form id="register-form" :action="action" method="POST">
+				<form id="register-form" @submit="submitLogin">
 					<div class="form-group">
 						<label for="username">Username</label>
 						<input type="text" class="form-control" v-model="username" name="username" required>
@@ -12,7 +12,7 @@
 						<label for="password">Password</label>
 						<input type="password" class="form-control" v-model="password" name="password" required>
 					</div>
-					<button v-on:click="submitLogin" class="btn btn-primary">Submit</button>
+					<button class="btn btn-primary">Login</button>
 				</form>
 			</div>
 		</div>
@@ -26,8 +26,9 @@ export default {
 		}
 	},
 	methods: {
-		submitLogin: function() {
-
+		submitLogin: function(e) {
+			e.preventDefault();
+			Meteor.loginWithPassword(this.username, this.password);
 		}
 	}
 };
